@@ -159,7 +159,7 @@ H3 --> J
 
 I --> K[Final Catalog]
 J --> K
-
+```
 
 ## Tech Stack
 Python • TensorFlow • Keras • Scikit-learn • PyTorch (embeddings)  
