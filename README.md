@@ -26,6 +26,17 @@ We design a full ML pipeline combining:
 - Supervised classification for production-ready labeling  
 - External data enrichment for category expansion  
 
+```mermaid
+flowchart LR
+A[Raw Marketplace Data] --> B[Data Layer]
+B --> C1[Text Data]
+B --> C2[Image Data]
+C1 --> D1[TF-IDF / BERT]
+C2 --> D2[CNN Embeddings]
+D1 --> E[Feature Space]
+D2 --> E
+E --> F[Modeling]
+F --> G[Output Categories]
 
 ## System Architecture
 
