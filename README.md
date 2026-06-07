@@ -105,6 +105,55 @@ The system follows a multimodal ML pipeline combining text, image, and external 
 
 ---
 
+## System Architecture
+
+### Overview
+The system follows a multimodal ML pipeline combining text, image, and external data sources.
+
+---
+
+### Data Layer
+- Product titles and descriptions (text)
+- Product images
+- External enrichment via Edamam API  
+
+---
+
+### Feature Engineering
+
+**Text:**
+- TF-IDF  
+- Word2Vec  
+- BERT  
+- Universal Sentence Encoder  
+
+**Images:**
+- SIFT / ORB  
+- ResNet / MobileNet CNN embeddings  
+
+---
+
+### Modeling
+
+**Unsupervised:**
+- KMeans  
+- DBSCAN  
+- PCA / t-SNE  
+
+**Supervised:**
+- CNN classifier  
+- TF-IDF + Logistic Regression  
+- Multimodal fusion models  
+
+---
+
+### Evaluation
+- ARI / NMI (clustering)  
+- Accuracy / F1 (classification)  
+- Confusion matrix  
+
+---
+
 ## Pipeline Diagram
 
 ```mermaid
@@ -140,26 +189,6 @@ H3 --> J
 
 I --> K[Final Catalog]
 J --> K
-
-
-## Project Structure
-
- ```
-marketplace-product-categorizer/
-│
-├── notebooks/            # Jupyter notebooks (EDA, feature engineering, modeling)
-│   ├── 01_eda_and_data_exploration.ipynb
-│   ├── 02_feature_extraction_and_clustering.ipynb
-│   └── 03_product_classification.ipynb
-│
-├── data/                 # Raw dataset and external enrichments
-│   └── champagne_products.csv
-│
-├── scripts/             # Data collection and scraping utilities
-│   └── champagne_scraper.py
-│
-└── README.md            # Project documentation
- ```
 
 
 ## Key Results & Insights
