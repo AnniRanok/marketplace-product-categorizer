@@ -161,3 +161,16 @@ I --> K[Final Catalog]
 J --> K
 
 
+## Tech Stack
+Python • TensorFlow • Keras • Scikit-learn • PyTorch (embeddings)  
+OpenCV • HuggingFace Transformers • NLTK / spaCy  
+Pandas • NumPy • Matplotlib • Seaborn  
+External APIs (Edamam via RapidAPI)  
+
+
+## Project Type
+Multimodal Machine Learning • Product Categorization • NLP + Computer Vision • Applied Data Science  
+
+
+## Status
+Research-to-prototype system demonstrating feasibility of scalable multimodal product classification for e-commerce platforms.
