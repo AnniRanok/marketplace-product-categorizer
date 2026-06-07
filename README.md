@@ -42,7 +42,26 @@ We design a full ML pipeline combining:
 - Clustering reveals meaningful structure in unlabeled product space  
 - External data enrichment improves coverage for niche categories  
 
+## Project Structure
 
+marketplace-product-categorizer/
+│
+├── notebooks/
+│   ├── 01_eda_and_data_exploration.ipynb
+│   ├── 02_feature_extraction_and_clustering.ipynb
+│   └── 03_product_classification.ipynb
+│
+├── data/
+│   └── raw/
+│       └── champagne_products.csv
+│
+├── scripts/
+│   └── champagne_scraper.py
+│
+├── models/          # Trained models (currently empty)
+├── outputs/         # Evaluation results, plots (currently empty)
+│
+└── README.md
 
 ## Tech Stack
 Python • TensorFlow • Keras • Scikit-learn • PyTorch (embeddings)  
