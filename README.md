@@ -72,22 +72,6 @@ We design a full ML pipeline combining:
 - Confusion Matrix analysis  
 
 
-## Key Capabilities
-- Multimodal product representation learning  
-- Automatic category discovery via clustering  
-- Supervised classification for production labeling  
-- Cross-modal feature fusion (text + image)  
-- External knowledge integration via APIs  
-
-
-## Data Enrichment (Optional Extension)
-To expand category coverage and improve long-tail classification:
-
-- Integrated Edamam API for external product data  
-- Extracted structured attributes (label, category, metadata, images)  
-- Used for augmenting niche product classes (e.g., beverages, gourmet items)  
-
-
 ## Project Structure
 
  ```
