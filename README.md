@@ -152,6 +152,89 @@ The system follows a multimodal ML pipeline combining text, image, and external 
 - Accuracy / F1 (classification)  
 - Confusion matrix  
 
+
+
+## Key Results & Insights
+- Text-only models provide strong baseline performance but struggle with ambiguous products  
+- Image embeddings significantly improve classification for visually distinctive categories  
+- Multimodal fusion improves stability and reduces misclassification in edge cases  
+- Clustering reveals meaningful structure in unlabeled product space  
+- External data enrichment improves coverage for niche categories  
+
+
+
+## Key Learnings
+- Multimodal representation learning for real-world e-commerce data  
+- Trade-offs between unsupervised discovery and supervised performance  
+- Importance of feature alignment across modalities  
+- Scaling classification systems beyond single-modality approaches  
+- Handling noisy and inconsistent marketplace datasets  
+
+
+
+## Tech Stack
+Python • TensorFlow • Keras • Scikit-learn • PyTorch (embeddings)  
+OpenCV • HuggingFace Transformers • NLTK / spaCy  
+Pandas • NumPy • Matplotlib • Seaborn  
+External APIs (Edamam via RapidAPI)  
+
+
+
+## Project Type
+Multimodal Machine Learning • Product Categorization • NLP + Computer Vision • Applied Data Science  
+
+
+
+## Status
+Research-to-prototype system demonstrating feasibility of scalable multimodal product classification for e-commerce platforms.
+
+## System Architecture
+
+### Overview
+The system follows a multimodal ML pipeline combining text, image, and external data sources.
+
+---
+
+### Data Layer
+- Product titles and descriptions (text)
+- Product images
+- External enrichment via Edamam API  
+
+---
+
+### Feature Engineering
+
+**Text:**
+- TF-IDF  
+- Word2Vec  
+- BERT  
+- Universal Sentence Encoder  
+
+**Images:**
+- SIFT / ORB  
+- ResNet / MobileNet CNN embeddings  
+
+---
+
+### Modeling
+
+**Unsupervised:**
+- KMeans  
+- DBSCAN  
+- PCA / t-SNE  
+
+**Supervised:**
+- CNN classifier  
+- TF-IDF + Logistic Regression  
+- Multimodal fusion models  
+
+---
+
+### Evaluation
+- ARI / NMI (clustering)  
+- Accuracy / F1 (classification)  
+- Confusion matrix  
+
 ---
 
 ## Pipeline Diagram
@@ -189,40 +272,5 @@ H3 --> J
 
 I --> K[Final Catalog]
 J --> K
-
-
-## Key Results & Insights
-- Text-only models provide strong baseline performance but struggle with ambiguous products  
-- Image embeddings significantly improve classification for visually distinctive categories  
-- Multimodal fusion improves stability and reduces misclassification in edge cases  
-- Clustering reveals meaningful structure in unlabeled product space  
-- External data enrichment improves coverage for niche categories  
-
-
-
-## Key Learnings
-- Multimodal representation learning for real-world e-commerce data  
-- Trade-offs between unsupervised discovery and supervised performance  
-- Importance of feature alignment across modalities  
-- Scaling classification systems beyond single-modality approaches  
-- Handling noisy and inconsistent marketplace datasets  
-
-
-
-## Tech Stack
-Python • TensorFlow • Keras • Scikit-learn • PyTorch (embeddings)  
-OpenCV • HuggingFace Transformers • NLTK / spaCy  
-Pandas • NumPy • Matplotlib • Seaborn  
-External APIs (Edamam via RapidAPI)  
-
-
-
-## Project Type
-Multimodal Machine Learning • Product Categorization • NLP + Computer Vision • Applied Data Science  
-
-
-
-## Status
-Research-to-prototype system demonstrating feasibility of scalable multimodal product classification for e-commerce platforms.
 
 
