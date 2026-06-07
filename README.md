@@ -26,44 +26,75 @@ We design a full ML pipeline combining:
 - Supervised classification for production-ready labeling  
 - External data enrichment for category expansion  
 
-
 ## System Architecture
+
+### 1. Data Layer
+- Product titles and descriptions  
+- Product images  
+- External enrichment via Edamam API  
+
+---
+
+### 2. Feature Engineering
+- Text embeddings: TF-IDF, Word2Vec, BERT, USE  
+- Image embeddings: ResNet, MobileNet CNN  
+- Structured metadata features  
+
+---
+
+### 3. Modeling
+- KMeans, DBSCAN (unsupervised learning)  
+- CNN / Logistic Regression (supervised learning)  
+- Multimodal fusion models  
+
+---
+
+### 4. Evaluation
+- ARI / NMI (clustering)  
+- Accuracy / F1 (classification)  
+- Confusion matrix analysis  
+
+---
+
+## Pipeline Diagram
 
 ```mermaid
 flowchart LR
 
-A[Raw Marketplace Data] --> B[Data Ingestion Layer]
+A[Raw Marketplace Data] --> B[Data Layer]
 
-B --> C1[Text Data<br/>Titles & Descriptions]
-B --> C2[Image Data<br/>Product Images]
-B --> C3[External Data<br/>Edamam API]
+B --> C1[Text Data]
+B --> C2[Image Data]
+B --> C3[External Data]
 
-C1 --> D1[Text Preprocessing<br/>Cleaning + Tokenization]
-C2 --> D2[Image Preprocessing<br/>Resize + Normalization]
-C3 --> D3[External Feature Extraction]
+C1 --> D1[Text Embeddings]
+C2 --> D2[Image Embeddings]
+C3 --> D3[Metadata Features]
 
-D1 --> E1[Text Embeddings<br/>TF-IDF / Word2Vec / BERT / USE]
-D2 --> E2[Image Embeddings<br/>ResNet / MobileNet CNN]
-D3 --> E3[Structured Metadata Features]
+D1 --> E[Feature Space]
+D2 --> E
+D3 --> E
 
-E1 --> F[Multimodal Feature Space]
-E2 --> F
-E3 --> F
+E --> F[Models]
 
-F --> G1[Unsupervised Learning<br/>KMeans / DBSCAN]
-F --> G2[Supervised Learning<br/>CNN / Logistic Regression]
-F --> G3[Multimodal Fusion Models]
+F --> G1[Clustering]
+F --> G2[Classification]
+F --> G3[Fusion Models]
 
-G1 --> H1[Clustering Evaluation<br/>ARI / NMI]
-G2 --> H2[Classification Metrics<br/>Accuracy / F1]
-G3 --> H3[Confusion Matrix Analysis]
+G1 --> H1[ARI / NMI]
+G2 --> H2[Accuracy / F1]
+G3 --> H3[Confusion Matrix]
 
-H1 --> I[Product Structure Insights]
-H2 --> J[Final Product Categories]
+H1 --> I[Insights]
+H2 --> J[Final Categories]
 H3 --> J
 
-I --> K[Final Structured Catalog]
+I --> K[Final Catalog]
 J --> K
+
+
+## System Architecture
+
 
 ### 1. Data Layer
 - Product titles and descriptions (text)
