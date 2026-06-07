@@ -51,7 +51,6 @@ Pandas • NumPy • Matplotlib • Seaborn
 External APIs (Edamam via RapidAPI)  
 
 
-
 ## Project Type
 Multimodal Machine Learning • Product Categorization • NLP + Computer Vision • Applied Data Science  
 
@@ -65,14 +64,12 @@ Research-to-prototype system demonstrating feasibility of scalable multimodal pr
 ### Overview
 The system follows a multimodal ML pipeline combining text, image, and external data sources.
 
----
 
 ### Data Layer
 - Product titles and descriptions (text)
 - Product images
 - External enrichment via Edamam API  
 
----
 
 ### Feature Engineering
 
@@ -86,7 +83,6 @@ The system follows a multimodal ML pipeline combining text, image, and external 
 - SIFT / ORB  
 - ResNet / MobileNet CNN embeddings  
 
----
 
 ### Modeling
 
@@ -100,14 +96,12 @@ The system follows a multimodal ML pipeline combining text, image, and external 
 - TF-IDF + Logistic Regression  
 - Multimodal fusion models  
 
----
 
 ### Evaluation
 - ARI / NMI (clustering)  
 - Accuracy / F1 (classification)  
 - Confusion matrix  
 
----
 
 ## Pipeline Diagram
 
