@@ -47,19 +47,19 @@ We design a full ML pipeline combining:
 marketplace-product-categorizer/
 │
 ├── notebooks/
-│   ├── 01_eda_and_data_exploration.ipynb
-│   ├── 02_feature_extraction_and_clustering.ipynb
-│   └── 03_product_classification.ipynb
+│ ├── 01_eda_and_data_exploration.ipynb
+│ ├── 02_feature_extraction_and_clustering.ipynb
+│ └── 03_product_classification.ipynb
 │
 ├── data/
-│   └── raw/
-│       └── champagne_products.csv
+│ └── raw/
+│ └── champagne_products.csv
 │
 ├── scripts/
-│   └── champagne_scraper.py
+│ └── champagne_scraper.py
 │
-├── models/          # Trained models (currently empty)
-├── outputs/         # Evaluation results, plots (currently empty)
+├── models/ # Trained models (currently empty)
+├── outputs/ # Evaluation results, plots (currently empty)
 │
 └── README.md
 
