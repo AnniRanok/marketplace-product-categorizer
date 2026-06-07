@@ -26,12 +26,14 @@ We design a full ML pipeline combining:
 - Supervised classification for production-ready labeling  
 - External data enrichment for category expansion  
 
+
 ## System Architecture
 
 ### 1. Data Layer
 - Product titles and descriptions (text)
 - Product images
 - External enrichment via Edamam API  
+
 
 ### 2. Feature Engineering Layer
 
@@ -86,16 +88,23 @@ To expand category coverage and improve long-tail classification:
 - Used for augmenting niche product classes (e.g., beverages, gourmet items)  
 
 
-##  Project Structure
+## Project Structure
+
  ```
-SmartProductCategorization/
-├── notebooks/         - Jupyter notebooks for exploration
-├── data/              - Raw and processed data
-├── features/          - Extracted feature vectors
-├── models/            - Trained models
-├── api_edamam/        - Edamam API queries and CSV output
-├── utils/             - Utility functions
-└── README.md          - Project overview and documentation
+marketplace-product-categorizer/
+│
+├── notebooks/            # Jupyter notebooks (EDA, feature engineering, modeling)
+│   ├── 01_eda_and_data_exploration.ipynb
+│   ├── 02_feature_extraction_and_clustering.ipynb
+│   └── 03_product_classification.ipynb
+│
+├── data/                 # Raw dataset and external enrichments
+│   └── champagne_products.csv
+│
+├── scripts/             # Data collection and scraping utilities
+│   └── champagne_scraper.py
+│
+└── README.md            # Project documentation
  ```
 
 
@@ -107,12 +116,14 @@ SmartProductCategorization/
 - External data enrichment improves coverage for niche categories  
 
 
+
 ## Key Learnings
 - Multimodal representation learning for real-world e-commerce data  
 - Trade-offs between unsupervised discovery and supervised performance  
 - Importance of feature alignment across modalities  
 - Scaling classification systems beyond single-modality approaches  
 - Handling noisy and inconsistent marketplace datasets  
+
 
 
 ## Tech Stack
@@ -122,11 +133,13 @@ Pandas • NumPy • Matplotlib • Seaborn
 External APIs (Edamam via RapidAPI)  
 
 
+
 ## Project Type
 Multimodal Machine Learning • Product Categorization • NLP + Computer Vision • Applied Data Science  
 
 
+
 ## Status
-Research-to-prototype system demonstrating feasibility of scalable multimodal product classification for e-commerce platforms. 
+Research-to-prototype system demonstrating feasibility of scalable multimodal product classification for e-commerce platforms.
 
 
