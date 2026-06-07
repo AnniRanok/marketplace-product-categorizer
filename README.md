@@ -56,6 +56,55 @@ We design a full ML pipeline combining:
 
 ---
 
+## System Architecture
+
+### Overview
+The system follows a multimodal ML pipeline combining text, image, and external data sources.
+
+---
+
+### Data Layer
+- Product titles and descriptions (text)
+- Product images
+- External enrichment via Edamam API  
+
+---
+
+### Feature Engineering
+
+**Text:**
+- TF-IDF  
+- Word2Vec  
+- BERT  
+- Universal Sentence Encoder  
+
+**Images:**
+- SIFT / ORB  
+- ResNet / MobileNet CNN embeddings  
+
+---
+
+### Modeling
+
+**Unsupervised:**
+- KMeans  
+- DBSCAN  
+- PCA / t-SNE  
+
+**Supervised:**
+- CNN classifier  
+- TF-IDF + Logistic Regression  
+- Multimodal fusion models  
+
+---
+
+### Evaluation
+- ARI / NMI (clustering)  
+- Accuracy / F1 (classification)  
+- Confusion matrix  
+
+---
+
 ## Pipeline Diagram
 
 ```mermaid
@@ -91,52 +140,6 @@ H3 --> J
 
 I --> K[Final Catalog]
 J --> K
-
-
-## System Architecture
-
-
-### 1. Data Layer
-- Product titles and descriptions (text)
-- Product images
-- External enrichment via Edamam API  
-
-
-### 2. Feature Engineering Layer
-
-#### Text Representations
-- Bag-of-Words  
-- TF-IDF  
-- Word2Vec embeddings  
-- BERT sentence embeddings  
-- Universal Sentence Encoder (USE)  
-
-#### Image Representations
-- Classical features (SIFT, ORB)  
-- CNN embeddings (MobileNet, ResNet transfer learning)  
-
-
-### 3. Modeling Layer
-
-#### Unsupervised Learning
-- KMeans clustering  
-- DBSCAN clustering  
-- PCA / t-SNE for embedding visualization  
-
-**Evaluation Metrics:**
-- Adjusted Rand Index (ARI)  
-- Normalized Mutual Information (NMI)  
-
-
-#### Supervised Learning
-- CNN-based image classifier  
-- TF-IDF + Logistic Regression (text baseline)  
-- Multimodal fusion models (text + image embeddings)  
-
-**Evaluation Metrics:**
-- Accuracy  
-- F1-score  
-- Confusion Matrix analysis  
 
 
 ## Project Structure
