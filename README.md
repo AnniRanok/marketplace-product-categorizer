@@ -26,19 +26,43 @@ We design a full ML pipeline combining:
 - Supervised classification for production-ready labeling  
 - External data enrichment for category expansion  
 
-```mermaid
-flowchart LR
-A[Raw Marketplace Data] --> B[Data Layer]
-B --> C1[Text Data]
-B --> C2[Image Data]
-C1 --> D1[TF-IDF / BERT]
-C2 --> D2[CNN Embeddings]
-D1 --> E[Feature Space]
-D2 --> E
-E --> F[Modeling]
-F --> G[Output Categories]
 
 ## System Architecture
+
+flowchart LR
+
+A[Raw Marketplace Data] --> B[Data Ingestion Layer]
+
+B --> C1[Text Data<br/>Titles & Descriptions]
+B --> C2[Image Data<br/>Product Images]
+B --> C3[External Data<br/>Edamam API]
+
+C1 --> D1[Text Preprocessing<br/>Cleaning + Tokenization]
+C2 --> D2[Image Preprocessing<br/>Resize + Normalization]
+C3 --> D3[External Feature Extraction]
+
+D1 --> E1[Text Embeddings<br/>TF-IDF / Word2Vec / BERT / USE]
+D2 --> E2[Image Embeddings<br/>ResNet / MobileNet CNN]
+D3 --> E3[Structured Metadata Features]
+
+E1 --> F[Multimodal Feature Space]
+E2 --> F
+E3 --> F
+
+F --> G1[Unsupervised Learning<br/>KMeans / DBSCAN]
+F --> G2[Supervised Learning<br/>CNN / Logistic Regression]
+F --> G3[Multimodal Fusion Models]
+
+G1 --> H1[Clustering Evaluation<br/>ARI / NMI]
+G2 --> H2[Classification Metrics<br/>Accuracy / F1]
+G3 --> H3[Confusion Matrix Analysis]
+
+H1 --> I[Product Structure Insights]
+H2 --> J[Final Product Categories]
+H3 --> J
+
+I --> K[Final Structured Catalog]
+J --> K
 
 ### 1. Data Layer
 - Product titles and descriptions (text)
