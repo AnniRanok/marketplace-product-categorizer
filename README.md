@@ -1,23 +1,89 @@
+#  Smart Product Categorization System (Multimodal ML Pipeline)
 
-# Smart Product Categorization
+## Project Overview
+This project implements a multimodal machine learning system for automated product categorization in an e-commerce marketplace.
 
-This repository contains an AI-driven prototype designed for the **"Place de marché"** e-commerce platform.  
-It automates the categorization of products based on both textual descriptions and product images.  
-The project aims to improve scalability and user experience for both sellers and buyers.
+The system leverages both **textual descriptions and product images** to classify items into structured categories, combining supervised learning, unsupervised clustering, and feature embedding techniques.
+
+The goal is to replace inconsistent manual labeling with a **scalable, data-driven categorization pipeline**.
 
 
+## Problem Statement
+In marketplace environments, product categorization is often:
+- Inconsistent across sellers  
+- Manually intensive  
+- Poorly scalable as catalog size grows  
 
-##  Project Overview
+This project explores whether product classification can be reliably automated using multimodal machine learning.
 
-Currently, product categorization is done manually by sellers, which is error-prone and inconsistent.  
-This project explores whether product classification can be automated using machine learning techniques.
 
-The scope includes:
-- Unsupervised clustering and 2D visualization
-- Supervised classification with data augmentation
-- Feature extraction from both text and images
-- External data enrichment using the [Edamam API](https://rapidapi.com/edamam/api/edamam-food-and-grocery-database)
+## Solution Overview
+We design a full ML pipeline combining:
 
+- NLP-based text understanding  
+- Computer vision-based image embeddings  
+- Unsupervised clustering for structure discovery  
+- Supervised classification for production-ready labeling  
+- External data enrichment for category expansion  
+
+## System Architecture
+
+### 1. Data Layer
+- Product titles and descriptions (text)
+- Product images
+- External enrichment via Edamam API  
+
+### 2. Feature Engineering Layer
+
+#### Text Representations
+- Bag-of-Words  
+- TF-IDF  
+- Word2Vec embeddings  
+- BERT sentence embeddings  
+- Universal Sentence Encoder (USE)  
+
+#### Image Representations
+- Classical features (SIFT, ORB)  
+- CNN embeddings (MobileNet, ResNet transfer learning)  
+
+
+### 3. Modeling Layer
+
+#### Unsupervised Learning
+- KMeans clustering  
+- DBSCAN clustering  
+- PCA / t-SNE for embedding visualization  
+
+**Evaluation Metrics:**
+- Adjusted Rand Index (ARI)  
+- Normalized Mutual Information (NMI)  
+
+
+#### Supervised Learning
+- CNN-based image classifier  
+- TF-IDF + Logistic Regression (text baseline)  
+- Multimodal fusion models (text + image embeddings)  
+
+**Evaluation Metrics:**
+- Accuracy  
+- F1-score  
+- Confusion Matrix analysis  
+
+
+## Key Capabilities
+- Multimodal product representation learning  
+- Automatic category discovery via clustering  
+- Supervised classification for production labeling  
+- Cross-modal feature fusion (text + image)  
+- External knowledge integration via APIs  
+
+
+## Data Enrichment (Optional Extension)
+To expand category coverage and improve long-tail classification:
+
+- Integrated Edamam API for external product data  
+- Extracted structured attributes (label, category, metadata, images)  
+- Used for augmenting niche product classes (e.g., beverages, gourmet items)  
 
 
 ##  Project Structure
@@ -33,97 +99,34 @@ SmartProductCategorization/
  ```
 
 
-##  Feature Extraction
-
-###  Text Features:
-Implemented with multiple NLP approaches:
-- Bag of Words (word count)
-- TF-IDF
-- Word2Vec (pretrained embeddings)
-- BERT (sentence embeddings)
-- USE (Universal Sentence Encoder)
-
-### Image Features:
-Two parallel pipelines:
-- Classical feature detectors: SIFT / ORB / SURF
-- Deep learning embeddings via CNN (Transfer Learning with MobileNet / ResNet)
+## Key Results & Insights
+- Text-only models provide strong baseline performance but struggle with ambiguous products  
+- Image embeddings significantly improve classification for visually distinctive categories  
+- Multimodal fusion improves stability and reduces misclassification in edge cases  
+- Clustering reveals meaningful structure in unlabeled product space  
+- External data enrichment improves coverage for niche categories  
 
 
-
-## Clustering & Visualization
-
-To evaluate if automatic product grouping is feasible:
-
-- Dimensionality reduction (PCA, t-SNE)
-- Clustering analysis (e.g., KMeans, DBSCAN)
-- Visualization: each product as a 2D point, colored by its true category
-- Validation: ARI, NMI metrics between true categories and predicted clusters
+## Key Learnings
+- Multimodal representation learning for real-world e-commerce data  
+- Trade-offs between unsupervised discovery and supervised performance  
+- Importance of feature alignment across modalities  
+- Scaling classification systems beyond single-modality approaches  
+- Handling noisy and inconsistent marketplace datasets  
 
 
-
-## Supervised Classification (2nd Iteration)
-
-- Image classifier (CNN)
-- Text classifier (e.g., TF-IDF + Logistic Regression)
-- Combined multimodal models (optional)
-- Data augmentation for generalization
-- Evaluation metrics: Accuracy, F1-score, Confusion Matrix
+## Tech Stack
+Python • TensorFlow • Keras • Scikit-learn • PyTorch (embeddings)  
+OpenCV • HuggingFace Transformers • NLTK / spaCy  
+Pandas • NumPy • Matplotlib • Seaborn  
+External APIs (Edamam via RapidAPI)  
 
 
-
-## Edamam API Enrichment
-
-To test the expansion into high-end grocery categories (e.g., Champagne):
-
-- Queried **champagne** via Edamam API
-- Extracted the top 10 products
-- Saved in `champagne_products.csv` with:
-  - `foodId`
-  - `label`
-  - `category`
-  - `foodContentsLabel`
-  - `image`
+## Project Type
+Multimodal Machine Learning • Product Categorization • NLP + Computer Vision • Applied Data Science  
 
 
-
-##  Project Status
-
- Phase 1: Feature extraction & clustering feasibility study  
- Phase 2: Classification experiments underway  
- Next: API integration + production optimization
-
-
-
-##  Next Steps
-
-- Benchmark classifiers against clustering performance  
-- Optimize image preprocessing and augmentation strategies  
-- Expand categories and datasets  
-- Build a REST API for real-time inference
-
-
-
-##  Tech Stack
-
-- Python 3.10  
-- Pandas, NumPy, Scikit-learn  
-- TensorFlow / Keras  
-- OpenCV  
-- NLTK / SpaCy / Transformers  
-- Matplotlib, Seaborn  
-- Edamam API via RapidAPI
-
-
-
-##  Contributors
-
-This prototype was developed as part of a feasibility study for the "Place de marché" launch.  
-It aims to streamline product categorization and ensure a scalable foundation for future growth.
-
-
-
-## 📬 Contact
-
-📧 konar.inna@gmail.com  
+## Status
+Research-to-prototype system demonstrating feasibility of scalable multimodal product classification for e-commerce platforms. 
 
 
