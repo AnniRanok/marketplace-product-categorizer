@@ -29,6 +29,7 @@ We design a full ML pipeline combining:
 
 ## System Architecture
 
+```mermaid
 flowchart LR
 
 A[Raw Marketplace Data] --> B[Data Ingestion Layer]
